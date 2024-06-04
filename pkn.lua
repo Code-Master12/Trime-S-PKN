@@ -35,6 +35,8 @@ while not OnPlayerKilledEvent do
     wait(5)
 end
 
+local userInputService = game:GetService("UserInputService")
+
 local function onKeyPressB(input, gameProcessed)
     if gameProcessed then
         return
@@ -42,6 +44,17 @@ local function onKeyPressB(input, gameProcessed)
 
     if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.B then
         isActive = not isActive
+        if isActive then
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "Trime -S",
+                Text = "Player killed notification enabled!",
+            })
+        else
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "Trime -S",
+                Text = "Player killed notification disabled!",
+            })
+        end
     end
 end
 
