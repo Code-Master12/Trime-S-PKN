@@ -9,7 +9,7 @@ local function findAndTrackOnPlayerKilled()
             print("OnPlayerKilled Remote Event Found")
 
             OnPlayerKilledEvent.OnClientEvent:Connect(function(killed, killer)
-                if isActive then
+                if isPKNActive then
                     print("OnPlayerKilled Event Triggered")
                     killerName = (killer and killer.Name or "Nil")
                     killedName = (killed and killed.Name or "Nil")
