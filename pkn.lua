@@ -34,5 +34,3 @@ while not OnPlayerKilledEvent do
     end
     wait(5)
 end
-
-local userInputService = game:GetService("UserInputService")
