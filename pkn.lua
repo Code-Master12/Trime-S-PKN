@@ -24,12 +24,12 @@ local function findAndTrackOnPlayerKilled()
     end
 end
 
-if isActive do
+if isActive then
     findAndTrackOnPlayerKilled()
 end
 
 while not OnPlayerKilledEvent do
-    if isActive do
+    if isActive then
         findAndTrackOnPlayerKilled()
     end
     wait(5)
