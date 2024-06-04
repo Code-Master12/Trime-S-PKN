@@ -27,7 +27,8 @@ end
 findAndTrackOnPlayerKilled()
 
 while not OnPlayerKilledEvent do
-    findAndTrackOnPlayerKilled()
+    if isPKNActive then
+        findAndTrackOnPlayerKilled()
     wait(5)
 end
 
