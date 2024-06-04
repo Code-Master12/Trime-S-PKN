@@ -44,3 +44,5 @@ local function onKeyPressB(input, gameProcessed)
         isActive = not isActive
     end
 end
+
+userInputService.InputBegan:Connect(onKeyPressB)
