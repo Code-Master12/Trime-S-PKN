@@ -30,3 +30,13 @@ while not OnPlayerKilledEvent do
     findAndTrackOnPlayerKilled()
     wait(5)
 end
+
+local function onKeyPressB(input, gameProcessed)
+    if gameProcessed then
+        return
+    end
+
+    if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.B then
+        isPKNActive = not isPKNActive
+    end
+end
