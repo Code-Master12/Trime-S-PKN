@@ -37,7 +37,7 @@ while not OnPlayerKilledEvent do
     wait(5)
 end
 
-local function togglePKN()
+local function PKN:togglePKN()
     isActive = not isActive
     if isActive then
         game:GetService("StarterGui"):SetCore("SendNotification", {
