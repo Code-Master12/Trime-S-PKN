@@ -1,7 +1,8 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local OnPlayerKilledEvent
 local userInputService = game:GetService("UserInputService")
-local isActive = true
+local isActive = false
+local PKN = {}
 
 local function findAndTrackOnPlayerKilled()
     for _, item in ipairs(ReplicatedStorage:GetDescendants()) do
@@ -36,25 +37,17 @@ while not OnPlayerKilledEvent do
     wait(5)
 end
 
-local function onKeyPressB(input, gameProcessed)
-    if gameProcessed then
-        return
-    end
-
-    if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.B then
-        isActive = not isActive
-        if isActive then
-            game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "Trime -S";
-                Text = "Player Kill Notification Enabled!";
-            })
-        else
-            game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "Trime -S";
-                Text = "Player Kill Notification Disabled!";
-            })
-        end
+local function togglePKN()
+    isActive = not isActive
+    if isActive then
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Trime -S";
+            Text = "Player Kill Notification Enabled!";
+        })
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Trime -S";
+            Text = "Player Kill Notification Disabled!";
+        })
     end
 end
-
-userInputService.InputBegan:Connect(onKeyPressB)
