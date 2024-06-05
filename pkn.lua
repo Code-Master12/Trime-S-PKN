@@ -3,29 +3,6 @@ local OnPlayerKilledEvent
 local userInputService = game:GetService("UserInputService")
 local isActive = true
 
-local function onKeyPressB(input, gameProcessed)
-    if gameProcessed then
-        return
-    end
-
-    if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.B then
-        isActive = not isActive
-        if isActive then
-            game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "Trime -S";
-                Text = "Player Kill Notification Enabled!";
-            })
-        else
-            game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "Trime -S";
-                Text = "Player Kill Notification Disabled!";
-            })
-        end
-    end
-end
-
-userInputService.InputBegan:Connect(onKeyPressB)
-
 local function findAndTrackOnPlayerKilled()
     for _, item in ipairs(ReplicatedStorage:GetDescendants()) do
         if item:IsA("RemoteEvent") and item.Name == "OnPlayerKilled" then
@@ -58,3 +35,26 @@ while not OnPlayerKilledEvent do
     end
     wait(5)
 end
+
+local function onKeyPressB(input, gameProcessed)
+    if gameProcessed then
+        return
+    end
+
+    if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.B then
+        isActive = not isActive
+        if isActive then
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "Trime -S";
+                Text = "Player Kill Notification Enabled!";
+            })
+        else
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "Trime -S";
+                Text = "Player Kill Notification Disabled!";
+            })
+        end
+    end
+end
+
+userInputService.InputBegan:Connect(onKeyPressB)
