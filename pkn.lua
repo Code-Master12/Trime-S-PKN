@@ -3,7 +3,7 @@ local OnPlayerKilledEvent
 local userInputService = game:GetService("UserInputService")
 local isActive = true
 
-local function onKeyPressQ(input, gameProcessed)
+local function onKeyPressB(input, gameProcessed)
     if gameProcessed then
         return
     end
@@ -24,7 +24,7 @@ local function onKeyPressQ(input, gameProcessed)
     end
 end
 
-userInputService.InputBegan:Connect(onKeyPressQ)
+userInputService.InputBegan:Connect(onKeyPressB)
 
 local function findAndTrackOnPlayerKilled()
     for _, item in ipairs(ReplicatedStorage:GetDescendants()) do
