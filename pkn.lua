@@ -1,6 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local OnPlayerKilledEvent
 local isActive = false
+local PKN = {}
 
 local function findAndTrackOnPlayerKilled()
     for _, item in ipairs(ReplicatedStorage:GetDescendants()) do
