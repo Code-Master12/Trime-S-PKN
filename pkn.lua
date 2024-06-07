@@ -1,4 +1,6 @@
+-- PKN.lua
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local StarterGui = game:GetService("StarterGui")
 local OnPlayerKilledEvent
 local isActive = false
 local PKN = {}
@@ -14,7 +16,7 @@ local function findAndTrackOnPlayerKilled()
                     print("OnPlayerKilled Event Triggered")
                     local killerName = (killer and killer.Name or "Nil")
                     local killedName = (killed and killed.Name or "Nil")
-                    game:GetService("StarterGui"):SetCore("SendNotification", {
+                    StarterGui:SetCore("SendNotification", {
                         Title = "Trime -S",
                         Text = "Player killed!\nKiller: " .. killerName .. "\nKilled: " .. killedName,
                     })
@@ -25,17 +27,15 @@ local function findAndTrackOnPlayerKilled()
     end
 end
 
-local PKN = {}
-
 function PKN:togglePKN()
     isActive = not isActive
     if isActive then
-        game:GetService("StarterGui"):SetCore("SendNotification", {
+        StarterGui:SetCore("SendNotification", {
             Title = "Trime -S",
             Text = "Player Kill Notification Enabled!",
         })
     else
-        game:GetService("StarterGui"):SetCore("SendNotification", {
+        StarterGui:SetCore("SendNotification", {
             Title = "Trime -S",
             Text = "Player Kill Notification Disabled!",
         })
