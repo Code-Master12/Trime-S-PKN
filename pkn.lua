@@ -26,10 +26,10 @@ local function findAndTrackOnPlayerKilled()
     end
 end
 
-function PKN:disablePKN()
+function self:disablePKN()
     isActive = false
 
-function PKN:togglePKN()
+function self:togglePKN()
     isActive = not isActive
     if isActive then
         StarterGui:SetCore("SendNotification", {
