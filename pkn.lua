@@ -21,7 +21,6 @@ local function findAndTrackOnPlayerKilled()
                     })
                 end
             end)
-            break
         end
     end
 end
